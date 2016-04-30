@@ -21,7 +21,8 @@ class BlogController implements ControllerProviderInterface
 
     public function homepage(Request $request) : string
     {
-        $post = file_get_contents(__DIR__.'/../../posts/2016-04-29-1-modelling-people-s-names-is-hard.html');
+        $post = json_decode(file_get_contents(__DIR__.'/../../posts/2016-04-29-1-modelling-people-s-names-is-hard.json'), true);
+        $post['id'] = $post['published'] . '-' . $post['version'] . '-' . $post['slug'];
         return $this->twig->render('blog/blog.html.twig', ['post' => $post]);
     }
 

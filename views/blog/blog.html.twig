@@ -1,9 +1,30 @@
 {% extends 'layouts/application.html.twig' %}
 {% block layout_application_main_content %}
     <section class="page -blog">
-        {{ post|raw }}
+        {{ post.html|raw }}
     </section>
-    
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+         */
+         var disqus_config = function () {
+             this.page.url = 'http://agares.info/blog/{{ post.published|escape('js') }}/{{ post.version|escape('js') }}/{{ post.slug|escape('js') }}';
+             this.page.identifier = 'post.id';
+         };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//agaresinfo.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}
