@@ -15,7 +15,7 @@ fpm:
     volumes:
         - ./:/var/www/html
     environment:
-        - AGINFO_ENV=prod
+        - AGINFO_ENV=dev
     links:
         - pgsql
 
