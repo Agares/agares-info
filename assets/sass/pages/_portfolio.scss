@@ -1,0 +1,52 @@
+.page.-portfolio {
+  & > ul {
+    width: 320px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 650px) {
+    & > ul {
+      width: 650px;
+    }
+  }
+
+  @media (min-width: 980px) {
+    & > ul {
+      width: 980px;
+    }
+  }
+
+  & > ul > li {
+    width: 320px;
+    list-style-type: none;
+    text-align: justify;
+
+    header {
+      position: relative;
+
+      height: 240px;
+
+      h1 {
+        margin: 0;
+        position: absolute;
+        top: 0;
+
+        text-align: center;
+        background-color: rgba(darken($brand-colour, 30%), 0.8);
+        width: 100%;
+
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        padding: 0.5rem 0;
+      }
+    }
+
+    .technologies {
+      @extend .pills;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{% extends 'layouts/application.html.twig' %}
+{% block layout_application_main_content %}
+    <section class="page -cv">
+        <a href="{{ app.request.basepath }}/cv.pdf" class="download">Download as PDF</a>
+
+        <section class="basic-information">
+            <h2>Basic information</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd>Paweł Łuczkiewicz</dd>
+
+                <dt>Place of residence</dt>
+                <dd>Warsaw, Poland</dd>
+
+                <dt>Languages</dt>
+                <dd>Polish (native speaker), English (proficient)</dd>
+
+                <dt>Github</dt>
+                <dd class="contact-info"><a href="http://github.com/Agares">http://github.com/Agares</a></dd>
+
+                <dt>LinkedIn</dt>
+                <dd class="contact-info"><a href="https://www.linkedin.com/in/agares1">https://www.linkedin.com/in/agares1</a></dd>
+
+                <dt>E-Mail</dt>
+                <dd class="contact-info"><a href="mailto:me@agares.info">me@agares.info</a></dd>
+            </dl>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <dl>
+                <dt>PHP</dt>
+                <dd data-value="7"></dd>
+
+                <dt>C#</dt>
+                <dd data-value="7"></dd>
+
+                <dt>OOP</dt>
+                <dd data-value="7"></dd>
+
+                <dt>Git</dt>
+                <dd data-value="6"></dd>
+
+                <dt>SQL (T-SQL, PgSQL)</dt>
+                <dd data-value="6"></dd>
+
+                <dt>Asp.net MVC</dt>
+                <dd data-value="6"></dd>
+
+                <dt>Symfony 2&amp;3</dt>
+                <dd data-value="6"></dd>
+
+                <dt>HTML&CSS</dt>
+                <dd data-value="6"></dd>
+
+                <dt>TDD</dt>
+                <dd data-value="6"></dd>
+
+                <dt>SASS</dt>
+                <dd data-value="5"></dd>
+
+                <dt>Docker</dt>
+                <dd data-value="5"></dd>
+
+                <dt>C++</dt>
+                <dd data-value="5"></dd>
+
+                <dt>Nginx</dt>
+                <dd data-value="5"></dd>
+
+                <dt>jQuery</dt>
+                <dd data-value="5"></dd>
+
+                <dt>Javascript</dt>
+                <dd data-value="4"></dd>
+
+                <dt>Powershell</dt>
+                <dd data-value="4"></dd>
+            </dl>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <h3>Nowatel sp. z o.o.</h3>
+                    <p class="timerange">April 2012 &ndash; May 2014</p>
+                    <p>Part time (around 15-20h/week)</p>
+                    <p>PHP & Front-end developer — I have been working on configuration tool for communications system used by the Police, Fire Fighters, etc.</p>
+                    <p>My work was based mostly on Zend Framwork 1, MySQL and PostgreSQL (with PostGIS).</p>
+                </li>
+                <li>
+                    <h3>Audioteka S.A.</h3>
+                    <p class="timerange">June 2014 - <em>current</em></p>
+                    <p>PHP & C# Developer — I am working on the <a href="http://audioteka.com/">new version of the audiobook store that is core bussines of Audioteka</a>. Also I am fixing bugs and implementing new features in legacy back-end services.</p>
+                    <p>My work is mostly based on Symfony2, Silex, WCF, Microsoft SQL Server and PostgreSQL.</p>
+                </li>
+            </ul>
+        </section>
+    </section>
+{% endblock %}

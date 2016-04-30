@@ -1,0 +1,20 @@
+.pills {
+  padding: 0;
+  margin: 15px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  li {
+    list-style-type: none;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    background-color: darken($brand-colour, 30%);
+    transition: 1s ease-out background-color;
+
+    &:hover {
+      background-color: darken($brand-colour, 20%);
+    }
+  }
+}

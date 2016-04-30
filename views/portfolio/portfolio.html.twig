@@ -1,0 +1,21 @@
+{% extends 'layouts/application.html.twig' %}
+{% block layout_application_main_content %}
+    <section class="page -portfolio">
+        <ul>
+            {% for portfolio_item in portfolio %}
+                <li>
+                    <header>
+                        <h1>{{ portfolio_item.title }}</h1>
+                        <img src="{{ portfolio_item.imageUrl }}" />
+                    </header>
+                    <ul class="technologies">
+                        {% for technology in portfolio_item.technologies %}
+                            <li>{{ technology }}</li>
+                        {% endfor %}
+                    </ul>
+                    {{ portfolio_item.description|raw }}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

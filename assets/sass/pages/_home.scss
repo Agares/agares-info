@@ -1,0 +1,29 @@
+.page.-home {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  a {
+    display: block;
+    width: 7rem;
+    text-align: center;
+
+    &::after {
+      opacity: 0;
+      content: attr(data-tooltip);
+      display: block;
+
+      margin-top: 15px;
+      font-size: 0.75em;
+      transition: 300ms ease-out opacity;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  a i {
+    font-size: 3em;
+  }
+}

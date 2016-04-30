@@ -1,0 +1,25 @@
+nginx:
+    image: nginx
+    volumes:
+        - ./docker/nginx/etc/:/etc/nginx/conf.d
+        - ./:/var/www/html
+    ports:
+        - "8086:80"
+    links:
+        - fpm
+    environment:
+        - "VIRTUAL_HOST=agares.info,www.agares.info"
+
+fpm:
+    image: php:fpm
+    volumes:
+        - ./:/var/www/html
+    environment:
+        - AGINFO_ENV=dev
+    links:
+        - pgsql
+
+pgsql:
+    image: postgres
+    volumes:
+        - ./data/pgsql:/var/lib/postgresql/data/

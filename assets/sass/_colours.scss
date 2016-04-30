@@ -1,0 +1,24 @@
+$background-colour: #111;
+$text-colour: #eee;
+$brand-colour: #ff1885;
+$link-colour: rgb(178, 162, 189);
+
+body, html {
+  background-color: $background-colour;
+  color: $text-colour;
+}
+
+a {
+  color: $link-colour;
+}
+
+a:hover {
+  color: lighten($link-colour, 10%);
+}
+
+@media print {
+  body,html {
+    background-color: transparent;
+    color: #111;
+  }
+}

@@ -1,0 +1,13 @@
+html, body {
+    font-size: 11pt;
+}
+
+a {
+  &, &:hover {
+    color: inherit;
+  }
+
+  &::after {
+    content: " (" attr(href) ")";
+  }
+}

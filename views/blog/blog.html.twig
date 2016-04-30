@@ -1,0 +1,9 @@
+{% extends 'layouts/application.html.twig' %}
+{% block layout_application_main_content %}
+    <section class="page -blog">
+        {{ post|raw }}
+    </section>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}

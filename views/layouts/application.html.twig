@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>agares.info</title>
+        <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/style.css?v=003" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header class="main-header">
+            <h1>agares</h1>
+        </header>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="{{ url('homepage') }}">Home</a></li>
+                <!-- <li><a href="{{ url('portfolio') }}">Portfolio</a></li> -->
+                <li><a href="{{ url('cv') }}">CV</a></li>
+                <li><a href="{{ url('blog') }}">Blog</a></li>
+            </ul>
+        </nav>
+        {% block layout_application_main_content %}
+        {% endblock %}
+        <footer class="main-footer">
+            Copyright &copy; Paweł Łuczkiewicz {{ 'now'|date('Y') }}
+        </footer>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76732845-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+.main-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 1rem 0;
+
+  @media print {
+    display: none;
+  }
+}

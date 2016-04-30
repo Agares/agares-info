@@ -1,0 +1,141 @@
+$skills-colour: darken($brand-colour, 0%);
+$skills-height: $line-height * 0.5rem;
+$skills-gradient-max: linear-gradient(90deg, darken($brand-colour, 30%) 0, darken($brand-colour, 30%) 100%);
+
+.page.-cv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  dd, dt {
+    margin: 0;
+    padding: 0;
+  }
+
+  dt {
+    width: 45%;
+    text-align: right;
+  }
+
+  dd {
+    width: 45%;
+  }
+
+  .contact-info a {
+    @media print {
+        &::after {
+            content: " ";
+        }
+    }
+  }
+
+  .basic-information {
+    width: 100%;
+  }
+
+  .skills, .experience {
+    padding: 0 10px;
+    h2 {
+      border-bottom: 1px solid darken($brand-colour, 20%);
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 60ex) {
+    .skills, .experience {
+      width: 45%;
+
+      ul li {
+        padding: 0;
+      }
+    }
+  }
+
+  .skills {
+    dt,dd {
+      margin-bottom: 5px;
+    }
+    dd {
+      position: relative;
+      background: $skills-gradient-max repeat-x 0 50%;
+      background-size: auto $skills-height;
+    }
+
+    dd::after {
+      position: absolute;
+      display: inline-block;
+      height: $skills-height;
+      top: 50%;
+      margin-top: -1 * ($skills-height / 2);
+      left: 0;
+    }
+
+    dd::after {
+      z-index: 10;
+      background-color: $skills-colour;
+      background-size: $skills-height $skills-height;
+      content: " ";
+    }
+
+    @for $i from 1 to 10 {
+      dd[data-value='#{$i}']::after {
+        width: $i * 10%;
+      }
+    }
+
+    @media print {
+      dd::after {
+        display: none;
+      }
+
+      dd {
+        background-image: none;
+
+        &::before {
+          content: attr(data-value) " / 10";
+          margin-top: -0.5ex;
+          height: 1rem;
+        }
+      }
+    }
+  }
+
+  .experience {
+    ul {
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+      text-align: justify;
+      padding: 0 1ex;
+    }
+
+    .timerange {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      max-width: 50ex;
+      margin: 0 auto;
+    }
+  }
+
+  .download {
+    margin: 0 auto;
+
+    @media print {
+        display: none;
+    }
+  }
+}
