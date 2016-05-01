@@ -1,0 +1,9 @@
+imports:
+  - { resource: "@AppBundle/Resources/config/services.yml" }
+
+framework:
+  router:
+    resource: "%kernel.root_dir%/config/routing.yml"
+  templating:
+    engines: ['twig']
+  secret: "someveryrandomstuffherethatshouldbeinenv" #fixme
