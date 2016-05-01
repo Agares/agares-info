@@ -10,7 +10,7 @@ if(getenv('AGINFO_ENV') === 'dev') {
 
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../app/AppKernel.php';
-include_once __DIR__.'/../var/bootstrap.php.cache';
+//include_once __DIR__.'/../var/bootstrap.php.cache';
 
 $kernel = new AppKernel(getenv('AGINFO_ENV'), getenv('AGINFO_ENV') === 'dev');
 $kernel->loadClassCache();
