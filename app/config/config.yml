@@ -1,8 +1,16 @@
 imports:
+  - { resource: "parameters.yml" }
   - { resource: "@AppBundle/Resources/config/services.yml" }
   - { resource: "@BlogBundle/Resources/config/services.yml" }
+  - { resource: "services.yml" }
 
 framework:
   templating:
     engines: ['twig']
   secret: "someveryrandomstuffherethatshouldbeinenv" #fixme
+
+monolog:
+  handlers:
+    main:
+      type: service
+      id: monolog.handler.logentries

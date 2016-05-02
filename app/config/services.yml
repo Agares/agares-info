@@ -1,0 +1,4 @@
+services:
+  monolog.handler.logentries:
+    class: Monolog\Handler\LogEntriesHandler
+    arguments: ["%logentries.token%"]
