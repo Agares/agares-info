@@ -11,7 +11,8 @@
         "incenteev/composer-parameter-handler": "^2.0"
     },
     "require-dev": {
-      "sensio/generator-bundle": "^3.0"
+        "sensio/generator-bundle": "^3.0",
+        "phpunit/phpunit": "^5.2"
     },
     "authors": [
         {

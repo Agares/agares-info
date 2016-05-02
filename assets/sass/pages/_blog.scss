@@ -1,6 +1,33 @@
 .page.-blog {
     max-width: 900px;
     margin: 0 auto;
+
+    .post-list {
+        width: 100%;
+
+        time {
+            font-variant: all-small-caps;
+            font-size: 0.75rem;
+            margin-left: 0.4rem;
+        }
+
+        &, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            padding-bottom: 1.5rem;
+        }
+
+        a {
+            display: block;
+        }
+    }
 }
 
 #disqus_thread {
