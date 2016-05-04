@@ -5,3 +5,7 @@ blog_homepage:
 blog_post:
     path:     /post/{slug}
     defaults: { _controller: blog.controller.default:postAction }
+
+blog_feed_atom:
+    path:     /feed/atom
+    defaults: { _controller: blog.controller.feed:atomAction }

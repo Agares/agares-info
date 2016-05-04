@@ -3,5 +3,9 @@ services:
     class: Agares\BlogBundle\Controller\DefaultController
     arguments: ["@blog.repository.post", "@templating"]
 
+  blog.controller.feed:
+    class: Agares\BlogBundle\Controller\FeedController
+    arguments: ["@blog.repository.post", "@templating"]
+
   blog.repository.post:
     class: Agares\Blog\Infrastructure\PostRepository
