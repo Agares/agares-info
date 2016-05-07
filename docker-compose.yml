@@ -11,7 +11,7 @@ nginx:
         - "VIRTUAL_HOST=agares.info,www.agares.info"
 
 fpm:
-    image: php:fpm
+    build: ./docker/php
     volumes:
         - ./:/var/www/html
     environment:
@@ -23,3 +23,7 @@ pgsql:
     image: postgres
     volumes:
         - ./data/pgsql:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: "${PGSQL_USER}"
+      POSTGRES_PASSWORD: "${PGSQL_PASSWORD}"
+      POSTGRES_DB: "${PGSQL_DB}"

@@ -1,3 +1,4 @@
+# This file is auto-generated during the composer install
 parameters:
     locale: en
-    logentries.token: '658a0d45-79bb-44e5-959e-442d6aedd71b'
+    logentries.token: 658a0d45-79bb-44e5-959e-442d6aedd71b

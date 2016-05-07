@@ -25,18 +25,11 @@ class Post
 	private $content;
 
 	/**
-	 * @var integer
+	 * @var int
 	 */
 	private $version;
 
-	/**
-	 * @param \DateTime $publishedDate
-	 * @param $version
-	 * @param string $slug
-	 * @param string $title
-	 * @param string $content
-	 */
-	public function __construct($publishedDate, $version, $slug, $title, $content)
+	public function __construct(\DateTime $publishedDate, int $version, string $slug, string $title, string $content)
 	{
 		$this->publishedDate = $publishedDate;
 		$this->version = $version;
@@ -45,42 +38,27 @@ class Post
 		$this->content = $content;
 	}
 
-	/**
-	 * @return \DateTime
-	 */
-	public function getPublishedDate()
+	public function getPublishedDate() : \DateTime
 	{
 		return $this->publishedDate;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getSlug()
+	public function getSlug() : string
 	{
 		return $this->slug;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getTitle()
+	public function getTitle() : string
 	{
 		return $this->title;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getContent()
+	public function getContent() : string
 	{
 		return $this->content;
 	}
 
-	/**
-	 * @return integer
-	 */
-	public function getVersion()
+	public function getVersion() : int
 	{
 		return $this->version;
 	}

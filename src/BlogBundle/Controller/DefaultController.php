@@ -32,9 +32,6 @@ class DefaultController
 
     public function postAction(string $slug)
     {
-/*        $post = json_decode(file_get_contents($this->getParameter('kernel.root_dir').'/../posts/2016-04-29-1-modelling-people-s-names-is-hard.json'), true);
-        $post['id'] = $post['published'] . '-' . $post['version'] . '-' . $post['slug'];
-*/
 	    $post = $this->postRepository->findNewestVersionBySlug($slug);
 
         return new Response($this->templating->render('BlogBundle:Default:post.html.twig', ['post' => $post]));
