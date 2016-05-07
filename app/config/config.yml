@@ -1,5 +1,6 @@
 imports:
   - { resource: "parameters.yml" }
+  - { resource: "database.php" }
   - { resource: "@AppBundle/Resources/config/services.yml" }
   - { resource: "@BlogBundle/Resources/config/services.yml" }
   - { resource: "services.yml" }
@@ -14,3 +15,7 @@ monolog:
     main:
       type: service
       id: monolog.handler.logentries
+    nested:
+      type:  stream
+      path:  "%kernel.logs_dir%/%kernel.environment%.log"
+      level: debug

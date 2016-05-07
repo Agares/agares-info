@@ -8,4 +8,37 @@ services:
     arguments: ["@blog.repository.post", "@templating"]
 
   blog.repository.post:
-    class: Agares\Blog\Infrastructure\PostRepository
+    class: Agares\Blog\Infrastructure\DbPostRepository
+    arguments: ["@microrm.query_adapter", "@microorm.entity_definition_creator"]
+
+  microorm.entity_definition_creator:
+    class: Agares\MicroORM\EntityDefinitionCreator
+    arguments: ["@microorm.field_name_mapper"]
+
+  microorm.field_name_mapper:
+    class: Agares\MicroORM\FieldNameMappers\ToUnderscores
+
+  microrm.query_adapter:
+    class: Agares\MicroORM\QueryAdapter
+    arguments: ["@microorm.db_adapter", "@microorm.entity_mapper"]
+
+  microorm.db_adapter:
+    class: Agares\MicroORM\PDODbAdapter
+    arguments: ["@db_connection"]
+
+  microorm.entity_mapper:
+    class: Agares\MicroORM\EntityMapper
+    arguments: [{ string: "@microorm.type_mappers.string", int: "@microorm.type_mappers.integer", DateTime: "@microorm.type_mappers.datetime" }]
+
+  microorm.type_mappers.string:
+    class: Agares\MicroORM\TypeMappers\StringTypeMapper
+
+  microorm.type_mappers.integer:
+    class: Agares\MicroORM\TypeMappers\IntegerTypeMapper
+
+  microorm.type_mappers.datetime:
+    class: Agares\Blog\Infrastructure\DateTimeTypeMapper
+
+  db_connection:
+    class: PDO
+    arguments: ["pgsql:host=%db_hostname%;dbname=%db_name%", "%db_username%", "%db_password%"]
