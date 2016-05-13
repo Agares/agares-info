@@ -3,5 +3,5 @@ app_homepage:
     defaults: { _controller: AppBundle:Default:index }
 
 app_cv:
-    path: /cv
+    path: /cv/
     defaults: { _controller: AppBundle:Cv:index }
