@@ -1,7 +1,24 @@
-$background-colour: #111;
-$text-colour: #eee;
 $brand-colour: #ff1885;
-$link-colour: rgb(178, 162, 189);
+$brand-colour-shade-1: #BF1264;
+$brand-colour-shade-2: #7f0c42;
+$brand-colour-shade-3: #400621;
+$brand-colour-shade-4: #19020D;
+
+$secondary-colour: #FFE931;
+$secondary-colour-shade-1: #BFAF26;
+$secondary-colour-shade-2: #7F7419;
+$secondary-colour-shade-3: #403A0C;
+$secondary-colour-shade-4: #191705;
+
+$gray-colour: #EBEBFF;
+$gray-colour-shade-1: #B0B0BF;
+$gray-colour-shade-2: #75757F;
+$gray-colour-shade-3: #3B3B40;
+$gray-colour-shade-4: #171719;
+
+$background-colour: $gray-colour-shade-4;
+$text-colour: $gray-colour;
+$link-colour: $gray-colour-shade-1;
 
 body, html {
   background-color: $background-colour;

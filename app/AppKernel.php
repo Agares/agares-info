@@ -23,7 +23,7 @@ class AppKernel extends Kernel
 			new MonologBundle(),
 			new SensioFrameworkExtraBundle(),
             new Agares\AppBundle\AppBundle(),
-            new Agares\BlogBundle\BlogBundle(),
+//            new Agares\BlogBundle\BlogBundle(),
         ];
 
 		if($this->getEnvironment() === 'dev') {

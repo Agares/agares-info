@@ -1,16 +1,37 @@
 {% extends 'layouts/application.html.twig' %}
 {% block layout_application_main_content %}
     <section class="page -home">
-        <a href="https://github.com/Agares" data-tooltip="github.com/Agares">
-            <i class="fa fa-github"></i>
-        </a>
+        <img src="{{ app.request.basepath }}/assets/myself.jpg" data-altsrc="{{ app.request.basepath }}/assets/myselfb.jpg" class="photo-myself" />
 
-        <a href="https://www.linkedin.com/in/agares1" data-tooltip="linkedin.com/in/agares1">
-            <i class="fa fa-linkedin"></i>
-        </a>
+        <section class="social-media">
+            <a href="https://github.com/Agares" data-tooltip="github.com/Agares">
+                <i class="fa fa-github"></i>
+            </a>
 
-        <a href="mailto:me@agares.info" data-tooltip="me@agares.info">
-            <i class="fa fa-envelope"></i>
-        </a>
+            <a href="https://www.linkedin.com/in/agares1" data-tooltip="linkedin.com/in/agares1">
+                <i class="fa fa-linkedin"></i>
+            </a>
+
+            <a href="mailto:me@agares.info" data-tooltip="me@agares.info">
+                <i class="fa fa-envelope"></i>
+            </a>
+        </section>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		var photoMyself = document.querySelector('.photo-myself');
+		
+		function changePhoto() {
+			var currentSrc = photoMyself.getAttribute('src');
+			var altSrc = photoMyself.dataset.altsrc;
+
+			photoMyself.dataset.altsrc = currentSrc;
+			photoMyself.setAttribute('src', altSrc);
+		}
+
+		photoMyself.addEventListener('mouseover', changePhoto);
+		photoMyself.addEventListener('mouseout', changePhoto);
+	</script>
 {% endblock %}

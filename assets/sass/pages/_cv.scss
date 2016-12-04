@@ -1,6 +1,6 @@
-$skills-colour: darken($brand-colour, 0%);
+$skills-colour: $brand-colour;
 $skills-height: $line-height * 0.5rem;
-$skills-gradient-max: linear-gradient(90deg, darken($brand-colour, 30%) 0, darken($brand-colour, 30%) 100%);
+$skills-gradient-max: linear-gradient(90deg, $brand-colour-shade-2 0, $brand-colour-shade-2 100%);
 
 .page.-cv {
   display: flex;
@@ -41,10 +41,10 @@ $skills-gradient-max: linear-gradient(90deg, darken($brand-colour, 30%) 0, darke
     width: 100%;
   }
 
-  .skills, .experience {
+  .skills, .experience, .basic-information {
     padding: 0 10px;
     h2 {
-      border-bottom: 1px solid darken($brand-colour, 20%);
+      border-bottom: 1px solid $brand-colour-shade-2;
       padding-bottom: 1rem;
     }
   }
@@ -132,7 +132,15 @@ $skills-gradient-max: linear-gradient(90deg, darken($brand-colour, 30%) 0, darke
   }
 
   .download {
-    margin: 0 auto;
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin: 1rem 0;
+    color: $secondary-colour-shade-1;
+
+    i {
+      color: $secondary-colour-shade-2;
+    }
 
     @media print {
         display: none;

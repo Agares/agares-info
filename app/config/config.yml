@@ -2,7 +2,7 @@ imports:
   - { resource: "parameters.yml" }
   - { resource: "database.php" }
   - { resource: "@AppBundle/Resources/config/services.yml" }
-  - { resource: "@BlogBundle/Resources/config/services.yml" }
+#  - { resource: "@BlogBundle/Resources/config/services.yml" }
   - { resource: "services.yml" }
 
 framework:

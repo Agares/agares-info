@@ -1,6 +1,15 @@
 .main-menu {
-  margin-bottom: 50px;
-  border-bottom: 1px solid $link-colour;
+  max-width: 900px;
+  margin: 0 auto 50px;
+
+  a {
+    font-size: 1.2rem;
+    color: $secondary-colour;
+
+    &:hover {
+      color: lighten($secondary-colour, 10%);
+    }
+  }
 
   ul {
     padding: 0;
@@ -8,16 +17,14 @@
     justify-content: center;
 
     li {
-      margin: 0;
+      margin: 0 1rem;
       list-style-type: none;
       text-align: center;
-      width: auto;
-      padding: 0 20px;
     }
   }
 
   a {
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight: 300;
   }
 

@@ -1,8 +1,6 @@
 {% extends 'layouts/application.html.twig' %}
 {% block layout_application_main_content %}
     <section class="page -cv">
-        <a href="{{ app.request.basepath }}/cv.pdf" class="download">Download as PDF</a>
-
         <section class="basic-information">
             <h2>Basic information</h2>
             <dl>
@@ -83,19 +81,21 @@
             <h2>Experience</h2>
             <ul>
                 <li>
+                    <h3>Audioteka S.A.</h3>
+                    <p class="timerange">June 2014 - <em>current</em></p>
+                    <p>PHP & C# Developer — I am working on the <a href="http://audioteka.com/">new version of the audiobook store that is core bussines of Audioteka</a>. Also I am fixing bugs and implementing new features in legacy back-end services.</p>
+                    <p>My work is mostly based on Symfony2, Silex, WCF, Microsoft SQL Server and PostgreSQL.</p>
+                </li>
+                <li>
                     <h3>Nowatel sp. z o.o.</h3>
                     <p class="timerange">April 2012 &ndash; May 2014</p>
                     <p>Part time (around 15-20h/week)</p>
                     <p>PHP & Front-end developer — I have been working on configuration tool for communications system used by the Police, Fire Fighters, etc.</p>
                     <p>My work was based mostly on Zend Framwork 1, MySQL and PostgreSQL (with PostGIS).</p>
                 </li>
-                <li>
-                    <h3>Audioteka S.A.</h3>
-                    <p class="timerange">June 2014 - <em>current</em></p>
-                    <p>PHP & C# Developer — I am working on the <a href="http://audioteka.com/">new version of the audiobook store that is core bussines of Audioteka</a>. Also I am fixing bugs and implementing new features in legacy back-end services.</p>
-                    <p>My work is mostly based on Symfony2, Silex, WCF, Microsoft SQL Server and PostgreSQL.</p>
-                </li>
             </ul>
         </section>
+
+        <a href="{{ app.request.basepath }}/cv.pdf" class="download"><i class="fa fa-file-pdf-o"></i> PDF</a>
     </section>
 {% endblock %}
