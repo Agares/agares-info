@@ -1,4 +1,6 @@
 public/assets
+!public/assets/myself.jpg
+!public/assets/myselfb.jpg
 vendor
 node_modules
 ### Symfony template
