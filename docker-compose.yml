@@ -5,8 +5,6 @@ services:
         volumes:
             - ./docker/nginx/etc/:/etc/nginx/conf.d
             - ./:/var/www/html
-#        ports:
-#            - "8086:80"
         links:
             - fpm
         environment:
@@ -21,18 +19,6 @@ services:
             - ./:/var/www/html
         environment:
             - AGINFO_ENV=prod
-        links:
-            - pgsql
-    
-    pgsql:
-        image: postgres
-        volumes:
-            - ./data/pgsql:/var/lib/postgresql/data/
-        environment:
-          POSTGRES_USER: "${PGSQL_USER}"
-          POSTGRES_PASSWORD: "${PGSQL_PASSWORD}"
-          POSTGRES_DB: "${PGSQL_DB}"
-
 networks:
     frontproxy_default:
         external: true

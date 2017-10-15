@@ -16,14 +16,3 @@ fpm:
         - ./:/var/www/html
     environment:
         - AGINFO_ENV=dev
-    links:
-        - pgsql
-
-pgsql:
-    image: postgres:9.5
-    volumes:
-        - ./data/pgsql:/var/lib/postgresql/data/
-    environment:
-      POSTGRES_USER: ${PGSQL_USER}
-      POSTGRES_PASSWORD: ${PGSQL_PASSWORD}
-      POSTGRES_DB: ${PGSQL_DB}
