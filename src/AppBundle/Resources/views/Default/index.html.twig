@@ -1,8 +1,6 @@
 {% extends 'layouts/application.html.twig' %}
 {% block layout_application_main_content %}
     <section class="page -home">
-        <img src="{{ app.request.basepath }}/assets/myself.jpg" data-altsrc="{{ app.request.basepath }}/assets/myselfb.jpg" class="photo-myself" />
-
         <section class="social-media">
             <a href="https://github.com/Agares" data-tooltip="github.com/Agares">
                 <i class="fa fa-github"></i>
@@ -16,6 +14,8 @@
                 <i class="fa fa-envelope"></i>
             </a>
         </section>
+
+        <img src="{{ app.request.basepath }}/assets/myself.jpg" data-altsrc="{{ app.request.basepath }}/assets/myselfb.jpg" class="photo-myself" />
     </section>
 {% endblock %}
 
