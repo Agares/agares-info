@@ -8,9 +8,6 @@ body, html {
 @import "_typography";
 @import "_colours";
 @import "_effects";
-@media print {
-  @import "_print";
-}
 
 @import "components/_main-menu";
 @import "components/_main-header";
@@ -21,3 +18,7 @@ body, html {
 @import "pages/_portfolio";
 @import "pages/_cv";
 @import "pages/_blog";
+
+@media print {
+  @import "_print";
+}

@@ -11,3 +11,32 @@ a {
     content: " (" attr(href) ")";
   }
 }
+
+.page.-cv {
+  display: block;
+
+  section.skills {
+    width: 100%;
+    column-count: 2;
+
+    h2 {
+      column-span: all;
+    }
+
+    dl {
+      margin-top: 0;
+    }
+  }
+
+  section.experience {
+    width: 100%;
+
+    p {
+      max-width: 100%;
+    }
+
+    li {
+      page-break-inside: avoid;
+    }
+  }
+}
