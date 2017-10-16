@@ -9,6 +9,7 @@ services:
             - fpm
         environment:
             - "VIRTUAL_HOST=agares.info,www.agares.info"
+        restart: always
         networks:
             - frontproxy_default
             - default
@@ -19,6 +20,7 @@ services:
             - ./:/var/www/html
         environment:
             - AGINFO_ENV=prod
+
 networks:
     frontproxy_default:
         external: true
