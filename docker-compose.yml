@@ -16,6 +16,7 @@ services:
     
     fpm:
         build: ./docker/php
+        restart: always
         volumes:
             - ./:/var/www/html
         environment:
